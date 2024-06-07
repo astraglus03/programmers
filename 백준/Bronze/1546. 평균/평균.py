@@ -1,0 +1,5 @@
+a = int(input())
+b = list(map(int, input().split()))
+c = max(b)
+d = sum(b)
+print((d/(a*c))*100)
