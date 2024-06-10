@@ -1,7 +1,7 @@
-a,b = map(int,input().split())
-num_list = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-s = ""
-while a:
-    s += str(num_list[a%b])
-    a //= b
-print(s[::-1])
+a,b =map(int,input().split())
+c= '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+result=''
+while a!=0:
+    result+=c[a%b]
+    a //=b
+print(result[::-1])
