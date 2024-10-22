@@ -1,12 +1,11 @@
-a = int(input())
-b = int(input())
-c = int(input())
+a = [int(input()) for i in range(3)]
 
-if a == b == c:
+if a[0] == a[1] == a[2] == 60 and sum(a)==180:
     print('Equilateral')
-elif a + b + c == 180 and (a == b != c or a == c != b or b == c != a):
-    print('Isosceles')
-elif a + b + c == 180 and a != b != c:
-    print('Scalene')
-elif a + b + c != 180:
+elif sum(a) == 180:
+    if a[0] == a[1] or a[1] == a[2] or a[0] == a[2]:
+        print('Isosceles')
+    else:
+        print('Scalene')
+else:
     print('Error')
