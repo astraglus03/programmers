@@ -2,6 +2,7 @@ import sys
 
 a = int(sys.stdin.readline())
 res = set()
+res1 = {i for i in range(1, 21)}
 for i in range(a):
     b = sys.stdin.readline().split()
 
@@ -15,16 +16,13 @@ for i in range(a):
         else:
             sys.stdout.write('0'+'\n')
     elif b[0] == 'remove':
-        try:
-            res.remove(tmp)
-        except:
-            pass
+        res.discard(tmp)
     elif b[0] == 'toggle':
         if tmp in res:
-            res.remove(tmp)
+            res.discard(tmp)
         else:
             res.add(tmp)
     elif b[0] == 'all':
-        res = {i for i in range(1, 21)}
+        res = {i for i in range(1,21)}
     elif b[0] == 'empty':
         res.clear()
