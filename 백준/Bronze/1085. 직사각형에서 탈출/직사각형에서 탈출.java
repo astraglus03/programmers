@@ -10,16 +10,8 @@ public class Main {
         int c = Integer.parseInt(input[2]);
         int d = Integer.parseInt(input[3]);
 
-        int xMin = Math.min(a, c);
-        int yMin = Math.min(b, d);
-
-        if(xMin > c-a){
-            xMin = c-a;
-        }
-
-        if(yMin > d-b){
-            yMin = d-b;
-        }
+        int xMin = Math.min(a, c-a);
+        int yMin = Math.min(b, d-b);
 
         System.out.println(Math.min(xMin, yMin));
 
