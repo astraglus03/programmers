@@ -1,5 +1,8 @@
 import sys
+
 a = int(sys.stdin.readline())
-b = sorted([int(sys.stdin.readline()) for i in range(a)])
+b = [int(sys.stdin.readline().strip()) for _ in range(a)]
+b.sort()
+
 for i in b:
-   print(i)
+    print(i)
