@@ -1,9 +1,13 @@
-a = int(input())
-k=[]
-for i in range(0,a):
-    b,c = map(str,input().split())
-    k.append((b,c))
-k.sort(key=lambda x:int(x[0]))
+import sys
 
-for i in k:
-    print(int(i[0]), i[1])
+a = int(sys.stdin.readline())
+b=[]
+
+for i in range(a):
+    m,n = sys.stdin.readline().strip().split()
+    b.append((int(m),n))
+
+sorted_dict = sorted(b, key= lambda x:(x[0]))
+
+for k,v in sorted_dict:
+    print(k,v)
