@@ -1,9 +1,11 @@
-def bio_coef(n,k):
-    if k==0 or n==k:
+import sys
+
+a,b = map(int,sys.stdin.readline().split())
+
+def factorial(n):
+    if n==0 or n==1:
         return 1
     else:
-        return bio_coef(n-1,k-1) + bio_coef(n-1,k)
+        return n*factorial(n-1)
 
-a,b = map(int,input().split())
-
-print(bio_coef(a,b))
+print(factorial(a)//(factorial(b)*factorial(a-b)))
