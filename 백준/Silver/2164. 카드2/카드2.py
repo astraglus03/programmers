@@ -1,13 +1,14 @@
 import sys
 from collections import deque
-res = deque([])
-a = int(sys.stdin.readline())
-for i in range(1,a+1):
-    res.append(i)
 
-while len(res)!=1:
-    res.popleft()
-    tmp = res.popleft()
-    res.append(tmp)
+p = int(sys.stdin.readline())
 
-print(res[0])
+
+def find_last(a):
+    b = deque(range(1, a + 1))
+    while len(b) > 1:
+        b.popleft()
+        b.append(b.popleft())
+    return b[0]
+
+print(find_last(p))
