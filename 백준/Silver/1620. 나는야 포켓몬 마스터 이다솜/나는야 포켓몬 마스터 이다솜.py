@@ -1,14 +1,18 @@
-a, b = map(int, input().split())
-c = {}
-e={}
-for i in range(1,a+1):
-    d = input()
-    c[i]=d
-    e[d]=i
+import sys
 
-for i in range(b):
-    f = input()
-    if f.isalpha() == True:
-        print(e[f])
+m,n = map(int,sys.stdin.readline().split())
+
+b=dict()
+c =dict()
+
+for i in range(m):
+    name=sys.stdin.readline().strip()
+    b[name]=i+1
+    c[i+1] = name
+
+for j in range(n):
+    tmp = sys.stdin.readline().strip()
+    if tmp.isdigit():
+        print(c[int(tmp)])
     else:
-        print(c[int(f)])
+        print(b[tmp])
