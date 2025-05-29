@@ -1,25 +1,26 @@
-while True:
-    a = input()
-    if a == '.':
-        break
-    res = []
-    for i in a:
-        if i == '(' or i == '[':
-            res.append(i)
-        if i == ')':
-            if len(res) != 0 and res[-1] == '(':
-                res.pop()
-            else:
-                res.append(')')
-                break
-        if i == ']':
-            if len(res) != 0 and res[-1] == '[':
-                res.pop()
-            else:
-                res.append(']')
-                break
+import sys
 
-    if len(res) == 0:
+while True:
+    inputs = sys.stdin.readline().rstrip()
+    if inputs == '.':
+        break
+    stack = []
+    for char in inputs:
+        if char == '(' or char == '[':
+            stack.append(char)
+        elif char == ')':
+            if len(stack) !=0 and stack[-1] == '(':
+                stack.pop()
+            else:
+                stack.append(')')
+                break
+        elif char == ']':
+            if len(stack) !=0 and stack[-1] == '[':
+                stack.pop()
+            else:
+                stack.append(']')
+                break
+    if len(stack) == 0:
         print('yes')
     else:
         print('no')
