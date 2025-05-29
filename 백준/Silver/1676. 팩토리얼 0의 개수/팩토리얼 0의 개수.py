@@ -1,13 +1,21 @@
-a = int(input())
-tmp=1
-for i in range(1,a+1):
-    tmp*=i
-cnt=0
-while True:
-    if tmp%2==0 and tmp%5==0:
-        cnt+=1
-        tmp//=10
-    else:
-        break
+import sys
 
-print(cnt)
+a = int(sys.stdin.readline())
+
+def factorial(n):
+    if n==1 or n==0:
+        return 1
+    else:
+        return n*factorial(n-1)
+
+tmp = factorial(a)
+count=0
+
+while(True):
+    if tmp%10 != 0:
+        break
+    else:
+        count += 1
+        tmp //= 10
+
+print(count)
