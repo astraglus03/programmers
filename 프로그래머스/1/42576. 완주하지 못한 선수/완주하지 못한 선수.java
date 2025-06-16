@@ -3,17 +3,16 @@ import java.util.*;
 class Solution {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
-        Arrays.sort(participant);
-        Arrays.sort(completion);
-        for (int i = 0; i < completion.length; i++) {
-            if (!participant[i].equals(completion[i])) {
-                answer = participant[i];
-                break;
+        Map<String,Integer> hmap = new HashMap<>();
+        for(String par: participant) hmap.put(par,hmap.getOrDefault(par,0)+1);
+        for(String com: completion) hmap.put(com,hmap.get(com)-1);
+        
+        for(String key: hmap.keySet()){
+            if(hmap.get(key) !=0){
+                answer = key;
             }
         }
-        if (answer.equals("")) {
-            answer = participant[participant.length - 1];
-        }
+        
         return answer;
     }
 }
